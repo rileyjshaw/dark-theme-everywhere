@@ -1,0 +1,14 @@
+# This file is for unifying the text formatting for different editors and IDEs.
+# Learn more at http://EditorConfig.org
+
+# Don't listen to .editorconfig files above the root directory
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = tab
+insert_final_newline = true
+max_line_length = 79
+trim_trailing_whitespace = true
