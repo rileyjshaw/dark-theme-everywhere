@@ -1,6 +1,6 @@
 !(function (global) {
 	// A unique ID for our injected <style> tag to make cleanup easier.
-	var ID = 'nicest-inverter-dark-mode-css';
+	var ID = 'dark-mode-everywhere-css-block';
 	// Keeps track of the current toggle state.
 	var isDark = false;
 
@@ -22,6 +22,8 @@
 	// expose it to background.js through listeners, and trust background.js as
 	// the dispatcher.
 	function toggle (cssContent) {
+		document.body.classList[(isDark ? 'remove' : 'add')](
+			'dark-mode-everywhere-specificity-helper');
 		(isDark ? unloadStyles : injectStyles)(cssContent);
 		isDark = !isDark;
 	}
