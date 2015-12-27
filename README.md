@@ -21,7 +21,7 @@ There are a lot of inverters out there, and many of them are great. I'm using [D
 
 ![A Tim Hortons restaurant that has been painted entirely black](./timmies.png)
 
-You can toggle the theme with a hotkey by going to Tools -> Extensions and clicking the "Keyboard shortcuts" link at the bottom.
+You can change the default theme from "Dark" to "Light" by going to Tools -> Extensions and clicking the "Options" link under Dark Theme Everywhere. You can toggle the theme with a hotkey by going to Tools -> Extensions and clicking the "Keyboard shortcuts" link at the bottom.
 
 Now that your browser is nice and dark-themed, you might notice an annoying white flash between pages. It's a known bug that's being tracked in [Issue 1373](https://code.google.com/p/chromium/issues/detail?id=1373) and [Issue 126341](https://code.google.com/p/chromium/issues/detail?id=126341). I wrote [another extension](https://chrome.google.com/webstore/detail/reduce-background-flicker/hdnedegfdlmgbabbgmnjnmmijfjeaiib) to reduce the flicker, but the problem will exist to some degree until it's fixed in Chromium.
 

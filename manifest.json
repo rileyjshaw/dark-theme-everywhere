@@ -25,10 +25,11 @@
 			"all_frames": true
 		}
 	],
+	"options_page": "options.html",
 	"web_accessible_resources": [
 		"dark-mode.css",
 		"icon38.png",
 		"icon38-light.png"
 	],
-	"version": "2.1.0"
+	"version": "2.2.0"
 }

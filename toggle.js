@@ -1,4 +1,4 @@
-!(function (global) {
+!function (global) {
 	// A unique ID for our injected <style> tag to make cleanup easier.
 	var ID = 'dark-mode-everywhere-css-block';
 	// Keeps track of the current toggle state.
@@ -38,6 +38,6 @@
 
 	// Let the background script know that we've loaded new content.
 	chrome.runtime.sendMessage({status: 'ready'}, function (response) {
-		toggle(response.cssContent);
+		if (response.defaultTheme === 'dark') toggle(response.cssContent);
 	});
-})(this);
+}(this);
