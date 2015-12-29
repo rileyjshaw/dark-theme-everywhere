@@ -129,15 +129,15 @@ html body.dark-mode-everywhere-specificity-helper code * {
 
 html body.dark-mode-everywhere-specificity-helper *:link,
 html body.dark-mode-everywhere-specificity-helper *:link * {
-	color: #55C8FF !important;
+	color: #55c8ff !important;
 }
 
 html body.dark-mode-everywhere-specificity-helper *:visited,
 html body.dark-mode-everywhere-specificity-helper *:visited * {
-	color: #FFE155 !important;
+	color: #ffe155 !important;
 }
 
 html body.dark-mode-everywhere-specificity-helper ::selection {
-	background-color: #FF5573 !important;
-	color: #0DD6EF !important;
+	background-color: #ff5573 !important;
+	color: #0dd6ef !important;
 }
