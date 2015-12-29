@@ -1,0 +1,438 @@
+/* By checking for :not(.off) vs .on, the page defaults to dark. This avoids
+ * causing a Blinding White Flash before the class changes. */
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off),
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) head,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body a,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body abbr,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body address,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body area,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body article,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body aside,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body audio,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body b,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body base,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body bdi,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body bdo,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body blockquote,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body br,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body button,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body canvas,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body caption,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body cite,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body code,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body col,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body colgroup,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body data,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body datalist,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body dd,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body del,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body dfn,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body div,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body dl,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body dt,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body em,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body embed,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body fieldset,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body figcaption,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body figure,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body footer,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body form,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body h1,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body h2,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body h3,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body h4,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body h5,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body h6,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body header,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body hr,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body i,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body iframe,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body img,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body input,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body ins,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body kbd,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body keygen,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body label,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body legend,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body li,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body link,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body main,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body map,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body mark,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body meta,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body meter,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body nav,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body noscript,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body object,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body ol,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body optgroup,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body option,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body output,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body p,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body param,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body pre,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body progress,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body q,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body rb,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body rp,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body rt,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body rtc,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body ruby,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body s,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body samp,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body script,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body section,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body select,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body small,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body source,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body span,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body strong,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body sub,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body sup,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body table,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body tbody,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body td,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body template,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body textarea,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body tfoot,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body th,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body thead,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body time,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body title,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body tr,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body track,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body u,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body ul,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body var,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body video,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body wbr {
+	background: transparent !important;
+	background-repeat: no-repeat !important;
+	border-color: #1c1c1c !important;
+	color: #c3c3c3 !important;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.20) !important;
+}
+
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off),
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body div {
+	background: #141414 !important;
+}
+
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body pre,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body code {
+	background-color: #1c1c1c !important;
+}
+
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body pre *,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body code * {
+	color: #55bb88 !important;
+	text-shadow: none !important;
+}
+
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body *:link,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body *:link * {
+	color: #55c8ff !important;
+}
+
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body *:visited,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body *:visited * {
+	color: #ffe155 !important;
+}
+
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body ::selection {
+	background-color: #ff5573 !important;
+	color: #0dd6ef !important;
+}
+
+/* <html> with specificity helper ID variant (copypasta) */
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off),
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) head.dark-theme-everywhere-specificity-helper,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper a,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper abbr,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper address,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper area,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper article,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper aside,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper audio,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper b,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper base,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper bdi,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper bdo,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper blockquote,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper br,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper button,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper canvas,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper caption,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper cite,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper code,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper col,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper colgroup,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper data,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper datalist,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper dd,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper del,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper dfn,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper div,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper dl,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper dt,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper em,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper embed,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper fieldset,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper figcaption,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper figure,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper footer,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper form,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper h1,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper h2,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper h3,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper h4,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper h5,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper h6,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper header,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper hr,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper i,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper iframe,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper img,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper input,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper ins,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper kbd,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper keygen,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper label,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper legend,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper li,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper link,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper main,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper map,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper mark,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper meta,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper meter,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper nav,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper noscript,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper object,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper ol,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper optgroup,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper option,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper output,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper p,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper param,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper pre,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper progress,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper q,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper rb,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper rp,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper rt,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper rtc,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper ruby,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper s,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper samp,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper script,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper section,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper select,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper small,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper source,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper span,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper strong,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper sub,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper sup,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper table,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper tbody,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper td,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper template,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper textarea,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper tfoot,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper th,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper thead,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper time,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper title,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper tr,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper track,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper u,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper ul,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper var,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper video,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper wbr {
+  background: transparent !important;
+  background-repeat: no-repeat !important;
+  border-color: #1c1c1c !important;
+  color: #c3c3c3 !important;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.20) !important;
+}
+
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off),
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper div {
+  background: #141414 !important;
+}
+
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper pre,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper code {
+  background-color: #1c1c1c !important;
+}
+
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper pre *,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper code * {
+  color: #55bb88 !important;
+  text-shadow: none !important;
+}
+
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper *:link,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper *:link * {
+  color: #55c8ff !important;
+}
+
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper *:visited,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper *:visited * {
+  color: #ffe155 !important;
+}
+
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper ::selection {
+  background-color: #ff5573 !important;
+  color: #0dd6ef !important;
+}
+
+/* <body> with specificity helper ID variant (copypasta) */
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off),
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) head,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper a,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper abbr,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper address,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper area,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper article,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper aside,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper audio,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper b,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper base,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper bdi,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper bdo,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper blockquote,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper br,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper button,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper canvas,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper caption,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper cite,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper code,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper col,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper colgroup,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper data,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper datalist,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper dd,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper del,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper dfn,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper div,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper dl,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper dt,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper em,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper embed,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper fieldset,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper figcaption,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper figure,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper footer,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper form,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper h1,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper h2,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper h3,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper h4,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper h5,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper h6,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper header,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper hr,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper i,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper iframe,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper img,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper input,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper ins,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper kbd,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper keygen,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper label,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper legend,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper li,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper link,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper main,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper map,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper mark,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper meta,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper meter,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper nav,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper noscript,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper object,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper ol,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper optgroup,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper option,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper output,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper p,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper param,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper pre,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper progress,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper q,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper rb,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper rp,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper rt,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper rtc,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper ruby,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper s,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper samp,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper script,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper section,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper select,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper small,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper source,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper span,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper strong,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper sub,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper sup,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper table,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper tbody#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper td,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper template,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper textarea,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper tfoot,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper th,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper thead,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper time,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper title,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper tr,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper track,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper u,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper ul,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper var,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper video,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper wbr {
+  background: transparent !important;
+  background-repeat: no-repeat !important;
+  border-color: #1c1c1c !important;
+  color: #c3c3c3 !important;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.20) !important;
+}
+
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off),
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper div {
+  background: #141414 !important;
+}
+
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper pre,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper code {
+  background-color: #1c1c1c !important;
+}
+
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper pre *,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper code * {
+  color: #55bb88 !important;
+  text-shadow: none !important;
+}
+
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper *:link,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper *:link * {
+  color: #55c8ff !important;
+}
+
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper *:visited,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper *:visited * {
+  color: #ffe155 !important;
+}
+
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper ::selection {
+  background-color: #ff5573 !important;
+  color: #0dd6ef !important;
+}
