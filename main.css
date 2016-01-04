@@ -107,16 +107,15 @@ html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) bo
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body var,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body video,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body wbr {
-	background: transparent !important;
+	background-color: transparent !important;
 	background-repeat: no-repeat !important;
 	border-color: #1c1c1c !important;
 	color: #c3c3c3 !important;
 	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.20) !important;
 }
 
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off),
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body div {
-	background: #141414 !important;
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) {
+	background-color: #141414 !important;
 }
 
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body pre,
@@ -253,16 +252,15 @@ html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper var,
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper video,
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper wbr {
-  background: transparent !important;
+  background-color: transparent !important;
   background-repeat: no-repeat !important;
   border-color: #1c1c1c !important;
   color: #c3c3c3 !important;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.20) !important;
 }
 
-html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off),
-html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper div {
-  background: #141414 !important;
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) {
+  background-color: #141414 !important;
 }
 
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper pre,
@@ -399,16 +397,15 @@ html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) bo
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper var,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper video,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper wbr {
-  background: transparent !important;
+  background-color: transparent !important;
   background-repeat: no-repeat !important;
   border-color: #1c1c1c !important;
   color: #c3c3c3 !important;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.20) !important;
 }
 
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off),
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper div {
-  background: #141414 !important;
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) {
+  background-color: #141414 !important;
 }
 
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper pre,
