@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-theme-everywhere-specificity-helper" id="dark-theme-everywhere-specificity-helper">
 <head>
 	<meta charset="UTF-8">
 	<title>Dark Theme Everywhere Options</title>
+	<link rel="stylesheet" href="main.css" />
 </head>
-<body>
+<body class="dark-theme-everywhere-specificity-helper">
+	<br />
 	<label for="theme">Theme defaults to:</label>
 	<select id="theme" autofocus>
 		<option value="dark">Dark</option>
 		<option value="light">Light</option>
 	</select>
+	<br />
+	<br />
+	<label for="exceptions">Exceptions (default to the opposite of what's listed above):
+		<ul>
+			<li>Each entry should contain a substring of the URL you wish to mark. For example:
+				<ul>
+					<li><em>google</em> will match <strong>google.com</strong> and <strong>google.org</strong></li>
+					<li><em>google.com</em> will only match <strong>google.com</strong> and not <strong>google.org</strong></li>
+				</ul>
+			</li>
+			<li>Separate entries with commas or new lines</li>
+		</ul>
+	</label>
+	<textarea name="exceptions" id="exceptions" cols="60" rows="7"></textarea>
 	<script src="options.js"></script>
 </body>
 </html>

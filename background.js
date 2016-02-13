@@ -18,9 +18,19 @@
 		function (request, sender, sendResponse) {
 			// Early exit if the message isn't coming from a content script.
 			var tab = sender.tab;
-			if (request !== 'ready' || !tab) {return;}
+			if (request.type !== 'ready' || !tab) {return;}
 
-			var isDark = global.localStorage.getItem('theme') === 'dark';
+			var theme = global.localStorage.getItem('theme');
+
+			var exceptions = global.localStorage.getItem('exceptions')
+				.replace(/ /g).split(/,|\n/);
+			var isException = exceptions.some(function(exception) {
+				return request.url.search(exception) !== -1;
+			});
+
+			// XOR
+			var isDark = isException !== (theme === 'dark');
+
 			if (!isDark) {sendResponse();}
 			setIcon(isDark);
 		}

@@ -19,7 +19,8 @@
 	});
 
 	// Let the background script know that we've loaded new content.
-	chrome.runtime.sendMessage('ready', toggle);
+	chrome.runtime.sendMessage(
+		{type: 'ready', url: window.location.href}, toggle);
 
 	// HACK(riley): To gain an advantage in the specificity wars (against RES,
 	//              for example), add an ID to the <html> or <body> element if

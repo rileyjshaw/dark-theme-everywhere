@@ -120,7 +120,8 @@ html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) bo
 }
 
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body pre,
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body code {
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body code,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body textarea {
 	background-color: #1c1c1c !important;
 }
 
@@ -266,7 +267,8 @@ html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-
 }
 
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper pre,
-html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper code {
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper code,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper textarea {
   background-color: #1c1c1c !important;
 }
 
@@ -412,7 +414,8 @@ html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) bo
 }
 
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper pre,
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper code {
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper code,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper textarea {
   background-color: #1c1c1c !important;
 }
 
