@@ -15,6 +15,11 @@
 		"16": "icon16.png"
 	},
 	"manifest_version": 2,
+	"applications": {
+		"gecko": {
+			"id": "dark-theme-everywhere@rileyjshaw.com"
+		}
+	},
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
