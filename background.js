@@ -25,9 +25,10 @@
 			if (request.type !== 'ready' || !tab) {return;}
 
 			var theme = global.localStorage.getItem('theme');
-
 			var exceptions = global.localStorage.getItem('exceptions')
-				.replace(/ /g).split(/,|\n/);
+				.replace(/ /g, '')
+				.split(/,|\n/)
+				;
 			var isException = exceptions.some(function(exception) {
 				return request.url.search(exception) !== -1;
 			});
