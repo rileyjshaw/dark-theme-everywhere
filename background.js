@@ -4,6 +4,10 @@
 	if (themes.indexOf(global.localStorage.getItem('theme')) === -1) {
 		global.localStorage.setItem('theme', 'dark');
 	}
+	// Add some other default values to be on the safe side.
+	if (!global.localStorage.getItem('exceptions')) {
+		global.localStorage.setItem('exceptions', '');
+	}
 
 	// Chrome extensions don't currently let you listen to the extension button
 	// from content scripts, so our background script acts as a dispatcher to
