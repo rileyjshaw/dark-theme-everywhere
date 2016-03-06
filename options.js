@@ -14,7 +14,6 @@
 	}
 
 	function setStyles(theme) {
-		console.log(theme);
 		document.documentElement.classList[
 			(theme === 'light' ? 'add' : 'remove')]('dark-theme-everywhere-off');
 	}
