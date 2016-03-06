@@ -26,9 +26,14 @@
 
 			var theme = global.localStorage.getItem('theme');
 			var exceptions = global.localStorage.getItem('exceptions')
+				// Remove spaces.
 				.replace(/ /g, '')
+				// Split on commas or newlines.
 				.split(/,|\n/)
+				// Remove blank lines.
+				.filter(function (exception) {return exception;})
 				;
+
 			var isException = exceptions.some(function(exception) {
 				return request.url.search(exception) !== -1;
 			});
