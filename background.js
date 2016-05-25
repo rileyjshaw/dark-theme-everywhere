@@ -20,7 +20,7 @@
 	// The active tab will, in turn, let the background script know when it has
 	// loaded new content so that we can re-initialize the tab.
 	chrome.runtime.onMessage.addListener(
-		function (request, sender, sendResponse) {
+		function (request, sender) {
 			// Early exit if the message isn't coming from a content script.
 			var tab = sender.tab;
 			if (request.type !== 'com.rileyjshaw.dte__READY' || !tab) {return;}
@@ -42,7 +42,7 @@
 			// XOR
 			var isDark = isException !== (theme === 'dark');
 
-			if (!isDark) {sendResponse();}
+			if (!isDark) {request.toggle();}
 			setIcon(isDark);
 		}
 	);

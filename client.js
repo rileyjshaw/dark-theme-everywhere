@@ -31,7 +31,8 @@
 	chrome.runtime.sendMessage({
 		type: 'com.rileyjshaw.dte__READY',
 		url: window.location.href,
-	}, toggle);
+		toggle: toggle,
+	});
 
 	// HACK(riley): To gain an advantage in the specificity wars (against RES,
 	//              for example), add an ID to the <html> or <body> element if
