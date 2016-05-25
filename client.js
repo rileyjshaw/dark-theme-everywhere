@@ -13,14 +13,25 @@
 
 	// If the background script (i.e. dispatcher) says "toggle", toggle!
 	chrome.runtime.onMessage.addListener(function (request, sender, response) {
-		// Early exit if the message is coming from another content script.
-		if (!request || sender.tab || typeof response !== 'function') {return;}
+		// Early exit if the message is invalid or coming from another content
+		// script.
+		if (
+			!request ||
+			request.type !== 'com.rileyjshaw.dte__TOGGLE' ||
+			sender.tab ||
+			typeof response !== 'function'
+		) {
+			return;
+		}
+
 		response(toggle());
 	});
 
 	// Let the background script know that we've loaded new content.
-	chrome.runtime.sendMessage(
-		{type: 'ready', url: window.location.href}, toggle);
+	chrome.runtime.sendMessage({
+		type: 'com.rileyjshaw.dte__READY',
+		url: window.location.href,
+	}, toggle);
 
 	// HACK(riley): To gain an advantage in the specificity wars (against RES,
 	//              for example), add an ID to the <html> or <body> element if

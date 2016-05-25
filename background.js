@@ -13,7 +13,8 @@
 	// from content scripts, so our background script acts as a dispatcher to
 	// the active tab.
 	chrome.browserAction.onClicked.addListener(function (tab) {
-		chrome.tabs.sendMessage(tab.id, 'toggle', setIcon);
+		chrome.tabs.sendMessage(
+			tab.id, {type: 'com.rileyjshaw.dte__TOGGLE'}, setIcon);
 	});
 
 	// The active tab will, in turn, let the background script know when it has
@@ -22,7 +23,7 @@
 		function (request, sender, sendResponse) {
 			// Early exit if the message isn't coming from a content script.
 			var tab = sender.tab;
-			if (request.type !== 'ready' || !tab) {return;}
+			if (request.type !== 'com.rileyjshaw.dte__READY' || !tab) {return;}
 
 			var theme = global.localStorage.getItem('theme');
 			var exceptions = global.localStorage.getItem('exceptions')
