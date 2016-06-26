@@ -20,7 +20,7 @@
 
 	theme.addEventListener('change', bindToLocalStorage('theme', setStyles));
 	exceptions.addEventListener('change', bindToLocalStorage('exceptions'));
-	exceptions.addEventListener('keyUp', bindToLocalStorage('exceptions'));
+	exceptions.addEventListener('keyup', bindToLocalStorage('exceptions'));
 
 	setStyles(theme.value);
 }(this);
