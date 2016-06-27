@@ -146,6 +146,12 @@ html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) bo
 	color: #0dd6ef !important;
 }
 
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off):not(.dark-theme-everywhere-filters-off) body.dark-theme-everywhere-specificity-helper img,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off):not(.dark-theme-everywhere-filters-off) body.dark-theme-everywhere-specificity-helper video,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off):not(.dark-theme-everywhere-filters-off) body.dark-theme-everywhere-specificity-helper embed {
+	-webkit-filter: brightness(75%) grayscale(15%);
+}
+
 /* <html> with specificity helper ID variant (copypasta) */
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off),
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) head,
@@ -293,6 +299,12 @@ html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-
   color: #0dd6ef !important;
 }
 
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off):not(.dark-theme-everywhere-filters-off) body.dark-theme-everywhere-specificity-helper img,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off):not(.dark-theme-everywhere-filters-off) body.dark-theme-everywhere-specificity-helper video,
+html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off):not(.dark-theme-everywhere-filters-off) body.dark-theme-everywhere-specificity-helper embed {
+	-webkit-filter: brightness(75%) grayscale(15%);
+}
+
 /* <body> with specificity helper ID variant (copypasta) */
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off),
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) head,
@@ -438,4 +450,10 @@ html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) bo
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper ::selection {
   background-color: #ff5573 !important;
   color: #0dd6ef !important;
+}
+
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off):not(.dark-theme-everywhere-filters-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper img,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off):not(.dark-theme-everywhere-filters-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper video,
+html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off):not(.dark-theme-everywhere-filters-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper embed {
+	-webkit-filter: brightness(75%) grayscale(15%);
 }

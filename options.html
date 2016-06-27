@@ -8,7 +8,7 @@
 <body class="dark-theme-everywhere-specificity-helper">
 	<br />
 	<label for="theme">Theme defaults to:</label>
-	<select id="theme" autofocus>
+	<select name="theme" id="theme" autofocus>
 		<option value="dark">Dark</option>
 		<option value="light">Light</option>
 	</select>
@@ -26,6 +26,11 @@
 		</ul>
 	</label>
 	<textarea name="exceptions" id="exceptions" cols="60" rows="7"></textarea>
+	<br />
+	<br />
+	<label for="darken">Darken media (images, videos, embeds)</label>
+	<input type="checkbox" name="darken" id="darken" />
+
 	<script src="options.js"></script>
 </body>
 </html>

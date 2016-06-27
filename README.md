@@ -16,6 +16,7 @@ Improvements from _Nicer Inverter_:
  - Dark-ifies pages aggressively, so you're much less likely to come across pages with bright patches.
  - Dark-ifies pages _by default_, so you don't need to click the extension's button on every page load.
  - Allows you to toggle dark styles on and off without reloading the page.
+ - Optionally darkens photos and media embeds.
 
 There are a lot of inverters out there, and many of them are great. I'm using [Dark Reader](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh) right now, and honestly, it's better than this for most use cases. BUT! Some pages on the internet are dark by default. When you invert a dark page, it becomes light. AGH MY EYES! This extension will _always_ give you a dark background.
 

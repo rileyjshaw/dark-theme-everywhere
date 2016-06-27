@@ -11,23 +11,24 @@
 	// the dispatcher.
 	function toggle () {
 		html.classList[(isDark ? 'add' : 'remove')]('dark-theme-everywhere-off');
-		return (isDark = !isDark);
+		isDark = !isDark;
 	}
 
 	// If the background script (i.e. dispatcher) says "toggle", toggle!
 	chrome.runtime.onMessage.addListener(function (request, sender, response) {
 		// Early exit if the message is invalid or coming from another content
 		// script.
-		if (
-			!request ||
-			request.type !== 'com.rileyjshaw.dte__TOGGLE' ||
-			sender.tab ||
-			typeof response !== 'function'
-		) {
-			return;
-		}
+		if (!request || sender.tab) {return;}
 
-		response(toggle());
+		switch (request.type) {
+			case 'com.rileyjshaw.dte__REMOVE_MEDIA_FILTERS':
+				html.classList.add('dark-theme-everywhere-filters-off');
+				break;
+			case 'com.rileyjshaw.dte__TOGGLE':
+				toggle();
+				if (typeof response === 'function') response(isDark);
+				break;
+		}
 	});
 
 	// Let the background script know that we've loaded new content.
