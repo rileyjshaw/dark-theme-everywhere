@@ -1,4 +1,7 @@
 !function (global) {
+	// Skip iframes.
+	try {if (window.self !== window.top) return;} catch (e) {return;}
+
 	var html = document.documentElement;
 	// Keeps track of the current toggle state.
 	var isDark = true;
@@ -28,11 +31,7 @@
 	});
 
 	// Let the background script know that we've loaded new content.
-	chrome.runtime.sendMessage({
-		type: 'com.rileyjshaw.dte__READY',
-		url: window.location.href,
-		toggle: toggle,
-	});
+	chrome.runtime.sendMessage({type: 'com.rileyjshaw.dte__READY'});
 
 	// HACK(riley): To gain an advantage in the specificity wars (against RES,
 	//              for example), add an ID to the <html> or <body> element if

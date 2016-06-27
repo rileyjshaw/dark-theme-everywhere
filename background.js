@@ -12,10 +12,11 @@
 	// Chrome extensions don't currently let you listen to the extension button
 	// from content scripts, so our background script acts as a dispatcher to
 	// the active tab.
-	chrome.browserAction.onClicked.addListener(function (tab) {
+	function toggleClient (tab) {
 		chrome.tabs.sendMessage(
 			tab.id, {type: 'com.rileyjshaw.dte__TOGGLE'}, setIcon);
-	});
+	}
+	chrome.browserAction.onClicked.addListener(toggleClient);
 
 	// The active tab will, in turn, let the background script know when it has
 	// loaded new content so that we can re-initialize the tab.
@@ -36,14 +37,14 @@
 				;
 
 			var isException = exceptions.some(function(exception) {
-				return request.url.search(exception) !== -1;
+				return sender.url.search(exception) !== -1;
 			});
 
 			// XOR
 			var isDark = isException !== (theme === 'dark');
 
-			if (!isDark) {request.toggle();}
 			setIcon(isDark);
+			if (!isDark) {toggleClient(sender.tab);}
 		}
 	);
 
