@@ -1,6 +1,6 @@
 !function (global) {
 	// Skip iframes.
-	try {if (window.self !== window.top) return;} catch (e) {return;}
+	try {if (global.self !== global.top) return;} catch (e) {return;}
 
 	var html = document.documentElement;
 	// Keeps track of the current toggle state.
@@ -26,7 +26,9 @@
 				break;
 			case 'com.rileyjshaw.dte__TOGGLE':
 				toggle();
-				if (typeof response === 'function') response(isDark);
+				if (typeof response === 'function') {
+					response({isDark: isDark, url: global.location.hostname});
+				}
 				break;
 		}
 	});
