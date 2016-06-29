@@ -34,7 +34,7 @@
 		var exceptions = getExceptions();
 		var newExceptions = isException(url, exceptions)
 			? exceptions.filter(function (exception) {
-				return exception.replace(toStrip, '') === url.replace(toStrip, '');
+				return exception.replace(toStrip, '') !== url.replace(toStrip, '');
 			})
 			: exceptions.concat(url);
 
