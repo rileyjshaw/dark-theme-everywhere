@@ -30,11 +30,11 @@
 		var isDark = response.isDark;
 
 		// Strip the protocol and trailing slashes.
-		var toStrip = /.*:\/\/|\/$/g;
+		var toStrip = /(?:.*:\/\/)?(?:www\.)?(.*?)\/*$/;
 		var exceptions = getExceptions();
 		var newExceptions = isException(url, exceptions)
 			? exceptions.filter(function (exception) {
-				return exception.replace(toStrip, '') !== url.replace(toStrip, '');
+				return exception.replace(toStrip, '$1') !== url.replace(toStrip, '$1');
 			})
 			: exceptions.concat(url);
 
