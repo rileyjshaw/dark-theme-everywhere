@@ -20,7 +20,6 @@ html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) bo
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper canvas,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper caption,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper cite,
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper code,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper col,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper colgroup,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper data,
@@ -107,8 +106,7 @@ html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) bo
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper var,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper video,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper wbr {
-	background: transparent !important;
-	background-repeat: no-repeat !important;
+	background-color: transparent !important;
 	border-color: #1c1c1c !important;
 	color: #c3c3c3 !important;
 	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.20) !important;
@@ -119,16 +117,8 @@ html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) bo
 	background: #141414 !important;
 }
 
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper pre,
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper code,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper textarea {
 	background-color: #1c1c1c !important;
-}
-
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper pre *,
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper code * {
-	color: #55bb88 !important;
-	text-shadow: none !important;
 }
 
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper *:link,
@@ -138,7 +128,7 @@ html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) bo
 
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper *:visited,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper *:visited * {
-	color: #ffe155 !important;
+	color: #24546B !important;
 }
 
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper ::selection {
@@ -173,7 +163,6 @@ html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper canvas,
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper caption,
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper cite,
-html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper code,
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper col,
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper colgroup,
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper data,
@@ -260,8 +249,7 @@ html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper var,
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper video,
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper wbr {
-  background: transparent !important;
-  background-repeat: no-repeat !important;
+  background-color: transparent !important;
   border-color: #1c1c1c !important;
   color: #c3c3c3 !important;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.20) !important;
@@ -272,16 +260,8 @@ html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-
   background: #141414 !important;
 }
 
-html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper pre,
-html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper code,
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper textarea {
   background-color: #1c1c1c !important;
-}
-
-html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper pre *,
-html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper code * {
-  color: #55bb88 !important;
-  text-shadow: none !important;
 }
 
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper *:link,
@@ -291,7 +271,7 @@ html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-
 
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper *:visited,
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper *:visited * {
-  color: #ffe155 !important;
+  color: #24546B !important;
 }
 
 html#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body.dark-theme-everywhere-specificity-helper ::selection {
@@ -326,7 +306,6 @@ html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) bo
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper canvas,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper caption,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper cite,
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper code,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper col,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper colgroup,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper data,
@@ -413,8 +392,7 @@ html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) bo
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper var,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper video,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper wbr {
-  background: transparent !important;
-  background-repeat: no-repeat !important;
+  background-color: transparent !important;
   border-color: #1c1c1c !important;
   color: #c3c3c3 !important;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.20) !important;
@@ -425,16 +403,8 @@ html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) bo
   background: #141414 !important;
 }
 
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper pre,
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper code,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper textarea {
   background-color: #1c1c1c !important;
-}
-
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper pre *,
-html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper code * {
-  color: #55bb88 !important;
-  text-shadow: none !important;
 }
 
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper *:link,
@@ -444,7 +414,7 @@ html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) bo
 
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper *:visited,
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper *:visited * {
-  color: #ffe155 !important;
+  color: #24546B !important;
 }
 
 html.dark-theme-everywhere-specificity-helper:not(.dark-theme-everywhere-off) body#dark-theme-everywhere-specificity-helper.dark-theme-everywhere-specificity-helper ::selection {
