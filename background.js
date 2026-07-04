@@ -1,93 +1,119 @@
-!function (global) {
-	// Ensure that the default theme is set, defaulting to Dark.
-	if (['dark', 'light'].indexOf(global.localStorage.getItem('theme')) === -1) {
-		global.localStorage.setItem('theme', 'dark');
-	}
-	// Add some other default values to be on the safe side.
-	if (!global.localStorage.getItem('exceptions')) {
-		global.localStorage.setItem('exceptions', '');
-	}
-	if (global.localStorage.getItem('darken') !== 'false') {
-		global.localStorage.setItem('darken', true);
-	}
+const DEFAULTS = {
+  theme: "dark",
+  exceptions: "",
+  darken: true
+};
 
-	// Chrome extensions don't currently let you listen to the extension button
-	// from content scripts, so our background script acts as a dispatcher to
-	// the active tab.
-	function toggleClient (tab, skipExclusion) {
-		var cb = skipExclusion
-			? function (response) {response && setIcon(response.isDark);}
-			: handleManualToggle;
-		chrome.tabs.sendMessage(tab.id, {type: 'com.rileyjshaw.dte__TOGGLE'}, cb);
-	}
-	chrome.browserAction.onClicked.addListener(toggleClient);
+async function getSettings() {
+  const settings = await chrome.storage.local.get(DEFAULTS);
+  return {
+    theme: settings.theme === "light" ? "light" : "dark",
+    exceptions: typeof settings.exceptions === "string" ? settings.exceptions : "",
+    darken: settings.darken !== false
+  };
+}
 
-	// If the toggle button is clicked manually, we add or remove the active
-	// site's subdomain to/from the exceptions list. This ensures that the
-	// toggled state persists on future visits to the page.
-	function handleManualToggle (response) {
-		var url = response.url;
-		var isDark = response.isDark;
+async function setSetting(key, value) {
+  await chrome.storage.local.set({ [key]: value });
+}
 
-		// Strip the protocol and trailing slashes.
-		var toStrip = /(?:.*:\/\/)?(?:www\.)?(.*?)\/*$/;
-		var exceptions = getExceptions();
-		var newExceptions = isException(url, exceptions)
-			? exceptions.filter(function (exception) {
-				return exception.replace(toStrip, '$1') !== url.replace(toStrip, '$1');
-			})
-			: exceptions.concat(url);
+function getExceptionsFromString(value) {
+  return String(value || "")
+    .replace(/ /g, "")
+    .split(/,|\n/)
+    .filter(Boolean);
+}
 
-		global.localStorage.setItem('exceptions', newExceptions.join('\n'));
-		setIcon(isDark);
-	}
+function isException(url, exceptions) {
+  return exceptions.some(exception => url.search(exception) !== -1);
+}
 
-	// The active tab will, in turn, let the background script know when it has
-	// loaded new content so that we can re-initialize the tab.
-	chrome.runtime.onMessage.addListener(
-		function (request, sender) {
-			// Early exit if the message isn't coming from a content script.
-			var tab = sender.tab;
-			if (request.type !== 'com.rileyjshaw.dte__READY' || !tab) {return;}
+async function setIcon(isDark, tabId) {
+  const file = "icon38" + (isDark ? "" : "-light") + ".png";
 
-			var theme = global.localStorage.getItem('theme');
-			var darken = global.localStorage.getItem('darken') === 'true';
+  try {
+    await chrome.action.setIcon({
+      tabId,
+      path: chrome.runtime.getURL(file)
+    });
+  } catch {
+    await chrome.action.setIcon({
+      path: chrome.runtime.getURL(file)
+    });
+  }
+}
 
-			// XOR
-			var isDark = isException(sender.url) !== (theme === 'dark');
+async function toggleClient(tab, skipExclusion = false) {
+  if (!tab || !tab.id) return;
 
-			setIcon(isDark);
-			if (!isDark) {toggleClient(tab, true);}
-			if (!darken) {
-				chrome.tabs.sendMessage(
-					tab.id, {type: 'com.rileyjshaw.dte__REMOVE_MEDIA_FILTERS'});
-			}
-		}
-	);
+  chrome.tabs.sendMessage(
+    tab.id,
+    { type: "com.rileyjshaw.dte__TOGGLE" },
+    async response => {
+      if (!response) return;
 
-	// Returns a formatted list of exception URLs.
-	function getExceptions () {
-		return global.localStorage.getItem('exceptions')
-			// Remove spaces.
-			.replace(/ /g, '')
-			// Split on commas or newlines.
-			.split(/,|\n/)
-			// Remove blank lines.
-			.filter(function (exception) {return exception;})
-			;
-	}
+      if (skipExclusion) {
+        await setIcon(response.isDark, tab.id);
+      } else {
+        await handleManualToggle(response, tab.id);
+      }
+    }
+  );
+}
 
-	// Accepts a URL and an optional exceptions list. Returns true if any of the
-	// list's fragments match the URL.
-	function isException (url, exceptions) {
-		return (exceptions || getExceptions()).some(function (exception) {
-			return url.search(exception) !== -1;
-		});
-	}
+async function handleManualToggle(response, tabId) {
+  const url = response.url;
+  const isDark = response.isDark;
 
-	// Helper function to set the browser action icon.
-	function setIcon (isDark) {
-		var file = 'icon38' + (isDark ? '' : '-light') + '.png';
-		chrome.browserAction.setIcon({path: chrome.extension.getURL(file)});
-	}
-}(this);
+  const toStrip = /(?:.*:\/\/)?(?:www\.)?(.*?)\/*$/;
+  const settings = await getSettings();
+  const exceptions = getExceptionsFromString(settings.exceptions);
+
+  const newExceptions = isException(url, exceptions)
+    ? exceptions.filter(exception => {
+        return exception.replace(toStrip, "$1") !== url.replace(toStrip, "$1");
+      })
+    : exceptions.concat(url);
+
+  await setSetting("exceptions", newExceptions.join("\n"));
+  await setIcon(isDark, tabId);
+}
+
+chrome.runtime.onInstalled.addListener(async () => {
+  const existing = await chrome.storage.local.get(null);
+  await chrome.storage.local.set({
+    theme: existing.theme || DEFAULTS.theme,
+    exceptions: existing.exceptions || DEFAULTS.exceptions,
+    darken: existing.darken === false ? false : true
+  });
+});
+
+chrome.action.onClicked.addListener(tab => {
+  toggleClient(tab, false);
+});
+
+chrome.runtime.onMessage.addListener((request, sender) => {
+  if (!request || request.type !== "com.rileyjshaw.dte__READY" || !sender.tab) {
+    return;
+  }
+
+  (async () => {
+    const settings = await getSettings();
+    const exceptions = getExceptionsFromString(settings.exceptions);
+
+    const isDark =
+      isException(sender.url || "", exceptions) !== (settings.theme === "dark");
+
+    await setIcon(isDark, sender.tab.id);
+
+    if (!isDark) {
+      await toggleClient(sender.tab, true);
+    }
+
+    if (!settings.darken) {
+      chrome.tabs.sendMessage(sender.tab.id, {
+        type: "com.rileyjshaw.dte__REMOVE_MEDIA_FILTERS"
+      });
+    }
+  })();
+});

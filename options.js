@@ -1,30 +1,47 @@
-!function (global) {
-	var theme = document.getElementById('theme');
-	var exceptions = document.getElementById('exceptions');
-	var darken = document.getElementById('darken');
+(async function () {
+  const DEFAULTS = {
+    theme: "dark",
+    exceptions: "",
+    darken: true
+  };
 
-	theme.value = global.localStorage.getItem('theme');
-	exceptions.value = global.localStorage.getItem('exceptions');
-	darken.checked = global.localStorage.getItem('darken') === 'true';
+  const theme = document.getElementById("theme");
+  const exceptions = document.getElementById("exceptions");
+  const darken = document.getElementById("darken");
 
-	function bindToLocalStorage(key, cb, attribute) {
-		return function (e) {
-			var value = e.target[attribute || 'value'];
-			global.localStorage.setItem(key, value);
-			if (cb) cb(value);
-		};
-	}
+  const settings = await chrome.storage.local.get(DEFAULTS);
 
-	function setStyles(theme) {
-		document.documentElement.classList[
-			(theme === 'light' ? 'add' : 'remove')]('dark-theme-everywhere-off');
-	}
+  theme.value = settings.theme === "light" ? "light" : "dark";
+  exceptions.value = settings.exceptions || "";
+  darken.checked = settings.darken !== false;
 
-	theme.addEventListener('change', bindToLocalStorage('theme', setStyles));
-	exceptions.addEventListener('change', bindToLocalStorage('exceptions'));
-	exceptions.addEventListener('keyup', bindToLocalStorage('exceptions'));
-	darken.addEventListener(
-		'change', bindToLocalStorage('darken', undefined, 'checked'));
+  function setStyles(value) {
+    document.documentElement.classList[
+      value === "light" ? "add" : "remove"
+    ]("dark-theme-everywhere-off");
+  }
 
-	setStyles(theme.value);
-}(this);
+  async function save(key, value) {
+    await chrome.storage.local.set({ [key]: value });
+  }
+
+  theme.addEventListener("change", async event => {
+    const value = event.target.value;
+    await save("theme", value);
+    setStyles(value);
+  });
+
+  exceptions.addEventListener("change", async event => {
+    await save("exceptions", event.target.value);
+  });
+
+  exceptions.addEventListener("keyup", async event => {
+    await save("exceptions", event.target.value);
+  });
+
+  darken.addEventListener("change", async event => {
+    await save("darken", event.target.checked);
+  });
+
+  setStyles(theme.value);
+})();
