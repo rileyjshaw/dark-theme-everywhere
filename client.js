@@ -12,6 +12,18 @@
 		html.classList.toggle(OFF_CLASS, !isDark);
 	}
 
+	function configure (request) {
+		if (request?.type !== 'dark-theme-everywhere:configure' || request.url !== location.href) return;
+		setDark(request.isDark === true);
+		html.classList.toggle(FILTERS_OFF_CLASS, request.darkenMedia !== true);
+	}
+
+	function refresh () {
+		chrome.runtime.sendMessage({type: 'dark-theme-everywhere:ready'}, (response) => {
+			if (!chrome.runtime.lastError) configure(response);
+		});
+	}
+
 	function addSpecificityHelpers () {
 		const body = document.body;
 		if (!body) return;
@@ -31,17 +43,16 @@
 	chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
 		switch (request?.type) {
 			case 'dark-theme-everywhere:configure':
-				setDark(request.isDark === true);
-				html.classList.toggle(FILTERS_OFF_CLASS, request.darkenMedia !== true);
+				configure(request);
 				break;
-			case 'dark-theme-everywhere:toggle':
-				setDark(!isDark);
+			case 'dark-theme-everywhere:get-state':
 				sendResponse({isDark, url: location.href});
 				break;
 		}
 	});
 
-	chrome.runtime.sendMessage({type: 'dark-theme-everywhere:ready'}, () => {
-		void chrome.runtime.lastError;
+	window.addEventListener('pageshow', (event) => {
+		if (event.persisted) refresh();
 	});
+	refresh();
 })();

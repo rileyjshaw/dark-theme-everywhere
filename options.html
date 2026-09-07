@@ -8,7 +8,7 @@
 <body class="dark-theme-everywhere-specificity-helper">
 	<br />
 	<label for="theme">Theme defaults to:</label>
-	<select name="theme" id="theme" autofocus>
+	<select name="theme" id="theme" autofocus disabled>
 		<option value="dark">Dark</option>
 		<option value="light">Light</option>
 	</select>
@@ -25,11 +25,15 @@
 			<li>Separate entries with commas or new lines</li>
 		</ul>
 	</label>
-	<textarea name="exceptions" id="exceptions" cols="60" rows="7"></textarea>
+	<textarea name="exceptions" id="exceptions" cols="60" rows="7" disabled></textarea>
 	<br />
 	<br />
 	<label for="darken">Darken media (images, videos, embeds)</label>
-	<input type="checkbox" name="darken" id="darken" />
+	<input type="checkbox" name="darken" id="darken" disabled />
+	<h2>Site overrides</h2>
+	<p>Clicking the toolbar button remembers a theme for that site without changing your exception rules.</p>
+	<ul id="site-overrides"></ul>
+	<p id="status" role="status" aria-live="polite"></p>
 
 	<script src="options.js"></script>
 </body>

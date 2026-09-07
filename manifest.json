@@ -3,7 +3,7 @@
 	"name": "Dark Theme Everywhere",
 	"short_name": "Dark Theme",
 	"description": "Darkens bright pages for easier night time reading.  Unofficial improvement of 'Nicer Inverter'.",
-	"version": "6.0.1",
+	"version": "6.0.2",
 	"minimum_chrome_version": "121",
 	"background": {
 		"service_worker": "background.js",
@@ -18,7 +18,7 @@
 		"48": "icon48.png",
 		"16": "icon16.png"
 	},
-	"permissions": ["storage"],
+	"permissions": ["storage", "offscreen"],
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],

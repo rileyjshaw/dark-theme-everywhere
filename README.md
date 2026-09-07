@@ -29,3 +29,17 @@ Now that your browser is nice and dark-themed, you might notice an annoying whit
 _Enjoy!_
 
 Licensed under [MIT](./LICENSE.md).
+
+## Development
+
+Requires Node.js 20 or newer.
+
+```sh
+npm install
+npm test
+npm run lint
+npm run build
+```
+
+Release ZIPs are written to `package/`; tests and promotional artwork are excluded.
+Load this directory as an unpacked extension in Chrome, or load `manifest.json` as a temporary add-on in Firefox.

@@ -1,0 +1,40 @@
+{
+  "name": "dark-theme-everywhere",
+  "private": true,
+  "version": "6.0.2",
+  "scripts": {
+    "test": "node --test test/*.test.cjs",
+    "lint": "web-ext lint",
+    "build": "web-ext build --overwrite-dest"
+  },
+  "devDependencies": {
+    "web-ext": "10.5.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=8.0.0"
+  },
+  "webExt": {
+    "sourceDir": ".",
+    "artifactsDir": "package",
+    "ignoreFiles": [
+      "test/**",
+      "package/**",
+      "package.json",
+      "package-lock.json",
+      "README.md",
+      "**/*.psd",
+      "**/*.svg",
+      "**/*.gif",
+      "before.png",
+      "after.png",
+      "banner.png",
+      "timmies.png",
+      "images/promo-*",
+      "images/title-*",
+      "images/sidebar-*",
+      "images/banner.png",
+      "images/screenshot.png"
+    ]
+  }
+}
