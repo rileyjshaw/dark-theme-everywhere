@@ -1,93 +1,146 @@
-!function (global) {
-	// Ensure that the default theme is set, defaulting to Dark.
-	if (['dark', 'light'].indexOf(global.localStorage.getItem('theme')) === -1) {
-		global.localStorage.setItem('theme', 'dark');
-	}
-	// Add some other default values to be on the safe side.
-	if (!global.localStorage.getItem('exceptions')) {
-		global.localStorage.setItem('exceptions', '');
-	}
-	if (global.localStorage.getItem('darken') !== 'false') {
-		global.localStorage.setItem('darken', true);
-	}
+(() => {
+	'use strict';
 
-	// Chrome extensions don't currently let you listen to the extension button
-	// from content scripts, so our background script acts as a dispatcher to
-	// the active tab.
-	function toggleClient (tab, skipExclusion) {
-		var cb = skipExclusion
-			? function (response) {response && setIcon(response.isDark);}
-			: handleManualToggle;
-		chrome.tabs.sendMessage(tab.id, {type: 'com.rileyjshaw.dte__TOGGLE'}, cb);
-	}
-	chrome.browserAction.onClicked.addListener(toggleClient);
+	const DEFAULT_SETTINGS = {
+		theme: 'dark',
+		exceptions: '',
+		darken: true,
+	};
+	// Firefox's MV3 fallback is an extension page and can migrate MV2
+	// localStorage directly. Chrome's service worker has no localStorage; its
+	// options page performs the equivalent migration when first opened.
+	const legacyStorageReady = migrateLegacyStorage();
 
-	// If the toggle button is clicked manually, we add or remove the active
-	// site's subdomain to/from the exceptions list. This ensures that the
-	// toggled state persists on future visits to the page.
-	function handleManualToggle (response) {
-		var url = response.url;
-		var isDark = response.isDark;
-
-		// Strip the protocol and trailing slashes.
-		var toStrip = /(?:.*:\/\/)?(?:www\.)?(.*?)\/*$/;
-		var exceptions = getExceptions();
-		var newExceptions = isException(url, exceptions)
-			? exceptions.filter(function (exception) {
-				return exception.replace(toStrip, '$1') !== url.replace(toStrip, '$1');
-			})
-			: exceptions.concat(url);
-
-		global.localStorage.setItem('exceptions', newExceptions.join('\n'));
-		setIcon(isDark);
+	function ignoreRuntimeError () {
+		void chrome.runtime.lastError;
 	}
 
-	// The active tab will, in turn, let the background script know when it has
-	// loaded new content so that we can re-initialize the tab.
-	chrome.runtime.onMessage.addListener(
-		function (request, sender) {
-			// Early exit if the message isn't coming from a content script.
-			var tab = sender.tab;
-			if (request.type !== 'com.rileyjshaw.dte__READY' || !tab) {return;}
-
-			var theme = global.localStorage.getItem('theme');
-			var darken = global.localStorage.getItem('darken') === 'true';
-
-			// XOR
-			var isDark = isException(sender.url) !== (theme === 'dark');
-
-			setIcon(isDark);
-			if (!isDark) {toggleClient(tab, true);}
-			if (!darken) {
-				chrome.tabs.sendMessage(
-					tab.id, {type: 'com.rileyjshaw.dte__REMOVE_MEDIA_FILTERS'});
-			}
-		}
-	);
-
-	// Returns a formatted list of exception URLs.
-	function getExceptions () {
-		return global.localStorage.getItem('exceptions')
-			// Remove spaces.
-			.replace(/ /g, '')
-			// Split on commas or newlines.
-			.split(/,|\n/)
-			// Remove blank lines.
-			.filter(function (exception) {return exception;})
-			;
-	}
-
-	// Accepts a URL and an optional exceptions list. Returns true if any of the
-	// list's fragments match the URL.
-	function isException (url, exceptions) {
-		return (exceptions || getExceptions()).some(function (exception) {
-			return url.search(exception) !== -1;
+	function getSettings (callback) {
+		legacyStorageReady.then(() => {
+			chrome.storage.local.get(DEFAULT_SETTINGS, (settings) => {
+				if (chrome.runtime.lastError) return;
+				callback({
+					theme: settings.theme === 'light' ? 'light' : 'dark',
+					exceptions: typeof settings.exceptions === 'string'
+						? settings.exceptions
+						: '',
+					darken: settings.darken !== false,
+				});
+			});
 		});
 	}
 
-	// Helper function to set the browser action icon.
-	function setIcon (isDark) {
-		var file = 'icon38' + (isDark ? '' : '-light') + '.png';
-		chrome.browserAction.setIcon({path: chrome.extension.getURL(file)});
+	function migrateLegacyStorage () {
+		if (typeof localStorage === 'undefined') return Promise.resolve();
+
+		return new Promise((resolve) => {
+			chrome.storage.local.get(null, (stored) => {
+				if (chrome.runtime.lastError) {
+					resolve();
+					return;
+				}
+
+				const legacyTheme = localStorage.getItem('theme');
+				const legacyExceptions = localStorage.getItem('exceptions');
+				const legacyDarken = localStorage.getItem('darken');
+				const migrated = {};
+
+				if (stored.theme === undefined && ['dark', 'light'].includes(legacyTheme)) {
+					migrated.theme = legacyTheme;
+				}
+				if (stored.exceptions === undefined && legacyExceptions !== null) {
+					migrated.exceptions = legacyExceptions;
+				}
+				if (stored.darken === undefined && legacyDarken !== null) {
+					migrated.darken = legacyDarken !== 'false';
+				}
+
+				if (Object.keys(migrated).length) {
+					chrome.storage.local.set(migrated, resolve);
+				} else {
+					resolve();
+				}
+			});
+		});
 	}
-}(this);
+
+	function getExceptions (value) {
+		return value
+			.split(/,|\n/)
+			.map((exception) => exception.trim())
+			.filter(Boolean);
+	}
+
+	function isException (url, exceptions) {
+		return exceptions.some((exception) => url.includes(exception));
+	}
+
+	function getSiteIdentifier (url) {
+		try {
+			const parsedUrl = new URL(url);
+			return parsedUrl.hostname
+				? parsedUrl.hostname.replace(/^www\./, '')
+				: url;
+		} catch {
+			return url;
+		}
+	}
+
+	function setIcon (tabId, isDark) {
+		chrome.action.setIcon({
+			tabId,
+			path: isDark ? 'icon38.png' : 'icon38-light.png',
+		}, ignoreRuntimeError);
+	}
+
+	function sendToTab (tabId, message, callback = ignoreRuntimeError) {
+		if (!Number.isInteger(tabId)) return;
+		chrome.tabs.sendMessage(tabId, message, callback);
+	}
+
+	function handleManualToggle (tabId, response) {
+		if (!response || typeof response.url !== 'string') return;
+
+		getSettings((settings) => {
+			const exceptions = getExceptions(settings.exceptions);
+			const matchingExceptions = exceptions.filter((exception) =>
+				response.url.includes(exception));
+			const nextExceptions = matchingExceptions.length
+				? exceptions.filter((exception) => !matchingExceptions.includes(exception))
+				: [...exceptions, getSiteIdentifier(response.url)];
+
+			chrome.storage.local.set({exceptions: nextExceptions.join('\n')});
+			setIcon(tabId, response.isDark === true);
+		});
+	}
+
+	chrome.action.onClicked.addListener((tab) => {
+		if (!Number.isInteger(tab.id)) return;
+		sendToTab(tab.id, {type: 'dark-theme-everywhere:toggle'}, (response) => {
+			if (chrome.runtime.lastError) return;
+			handleManualToggle(tab.id, response);
+		});
+	});
+
+	chrome.runtime.onMessage.addListener((request, sender) => {
+		if (
+			request?.type !== 'dark-theme-everywhere:ready' ||
+			!Number.isInteger(sender.tab?.id) ||
+			typeof sender.url !== 'string'
+		) return;
+
+		getSettings((settings) => {
+			const exceptions = getExceptions(settings.exceptions);
+			const shouldBeDark =
+				isException(sender.url, exceptions) !== (settings.theme === 'dark');
+
+			setIcon(sender.tab.id, shouldBeDark);
+			sendToTab(sender.tab.id, {
+				type: 'dark-theme-everywhere:configure',
+				isDark: shouldBeDark,
+				darkenMedia: settings.darken === true,
+			});
+		});
+	});
+
+})();
